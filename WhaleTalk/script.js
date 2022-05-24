@@ -1,4 +1,4 @@
-let input = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+let input = "Carolina Praticidade Alfredo Simplicidade"
 
 // Whales only speak with the vowels, “a”, “e”, “i”, “o”, and “u”. Using these lowercase letters, create an array named vowels. This array will not be updated so be sure to choose the appropriate declaration keyword.
 //Note: The use of this array will be more apparent within the following steps.
@@ -9,13 +9,27 @@ let vowels = ['a', 'e', 'i', 'o', 'u'];
 
 let resultArray = [];
 
-// Create a loop to iterate through each letter of the input variable text. In a later step, we will compare each letter with our vowels array.
+// Create a loop to iterate through each letter of the input variable text. In a later step, we will compare each letter with our vowels array and add them to resultArray;
+//Whales double their e‘s and the u‘s in their language.
+// Write an if statement that checks if each letter in the input string is equal to 'e'. If so, use the .push() method to add input[i] to the resultArray.
+// Note: This statement belongs before the inner for loop block inside the outer for loop. This is because you only want to perform this check once for every letter in the input.
 
 for(let i = 0 ; i < input.length ; i++){ 
+    if(input[i] === 'e'){
+        resultArray.push(input[i])
+    } else if (input[i] === 'u'){
+        resultArray.push(input[i])
+    }
     for(let j = 0 ; j < vowels.length ; j++ ){
         if(input[i] === vowels[j]){
-            resultArray.push(input[i])
-            console.log(vowels[j])
+            resultArray.push(vowels[j])
         }
     }
 }
+
+// Currently, resultArray outputs an array of characters. To produce proper whale language, we want to capitalize the array elements and put them together as one string.
+// Declare a variable resultString that joins our resultArray into a single string and capitalizes all of it’s letters.
+
+let resultString = resultArray.join('').toUpperCase();
+
+console.log(resultString);
