@@ -26,6 +26,6 @@ const menu = {
 
 
 menu.meal = 'Farofa com Bacon';
-menu.price = '32,00';
+menu.price = 32,00;
 
 console.log(menu.todaySpecial);
