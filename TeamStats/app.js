@@ -11,16 +11,42 @@ const team = {
     ],
 
     get players() { 
-        return Object.entries(team._players)
+        //return Object.entries(team._players) // Qual a diferença para return this._players // Conflitou com addPlayer
+        return this._players
     },
 
     get games() { 
-        return Object.entries(team._games)
+        return this._games
     },
 
-    addPlayer(newFirstName, newLastName, newAge)
+    addPlayer(newFirstName, newLastName, newAge) {
 
+        // Return team._players.push(player)
 
+        let player = { 
+            firstName : newFirstName,
+            lastName: newLastName,
+            age: newAge,
+        };
+
+        //this.players.push(player);
+        return team._players.push(player)
+    },
+
+    addGame(opponent, teamPoints, opponentPoints){ 
+        let game = { 
+            opponent, 
+            teamPoints, 
+            opponentPoints
+        }
+
+        this.games.push(game);
+    }
 }
 
+
+team.addPlayer('Alfredo', 'Junior', 32)
+team.addGame('BackLog', 34, 80);
+
+console.log(team.players);
 console.log(team.games);
