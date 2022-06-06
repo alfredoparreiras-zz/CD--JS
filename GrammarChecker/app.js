@@ -8,8 +8,27 @@ let badWord = 'freaking';
 
 let count = 0; 
 
-storyWords.forEach(word => count++ )
+storyWords = storyWords.filter( word => word != unnecessaryWord)
   
+// storyWords.forEach(word => count++ )
 
+storyWords = storyWords.map(word => {
+    if(word === misspelledWord){ 
+        return 'beautiful'
+    } else { 
+        return word
+    }
+})
 
-console.log(count);
+let badWordIndex = storyWords.findIndex(word => word === badWord);
+
+storyWords[78] = 'really';
+
+let lengthCheck = storyWords.every(word => word.length < 10)
+console.log(lengthCheck);
+
+storyWords[111] = 'glorious';
+
+console.log(storyWords.findIndex(word => word.length > 10))
+
+// console.log(storyWords);
